@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
 import javax.sql.DataSource;
@@ -11,7 +12,7 @@ import javax.sql.DataSource;
 /**
  * @author LZL
  */
-@SpringBootApplication
+@SpringBootApplication(exclude= {SecurityAutoConfiguration.class })
 public class ActivitiDemoApplication {
     @Value("${spring.datasource.driver-class-name}")
     private String driver;
